@@ -1,0 +1,52 @@
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const config = {
+  entry: "./src/main.tsx",
+  output: {
+    filename: "bundle.js",
+    path: resolve(__dirname, "dist"),
+    libraryTarget: "module",
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+  },
+  plugins: [new MiniCssExtractPlugin({
+    filename: "globals.css"
+  })],
+  module: {
+    rules: [
+      { test: /\.tsx?$/, use: "ts-loader" },
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      // Options
+                    },
+                  ],
+                ],
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
+  experiments: {
+    outputModule: true, // This enables ES module output
+  },
+};
+
+export default config;
