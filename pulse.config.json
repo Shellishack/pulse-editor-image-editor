@@ -1,0 +1,16 @@
+{
+    "extensionType": "file-view",
+    "name": "pulse-extension-template",
+    "description": "Pulse extension template",
+    "fileTypes": [
+        "txt",
+        "json",
+        "py",
+        "cpp",
+        "c",
+        "tsx",
+        "ts",
+        "js",
+        "jsx"
+    ]
+}
