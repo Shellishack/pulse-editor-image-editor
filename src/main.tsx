@@ -8,7 +8,8 @@ import { ExtensionConfig, ExtensionTypeEnum } from "@pulse-editor/types";
  */
 export const Config: ExtensionConfig = {
   // Do not use hyphen character '-' in the name
-  name: "pulse_extension_template",
+  id: "pulse_extension_template",
+  displayName: "Pulse Extension Template",
   description: "Pulse extension template",
   version: "v0.0.1",
   extensionType: ExtensionTypeEnum.FileView,
