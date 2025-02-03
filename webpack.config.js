@@ -11,7 +11,6 @@ const config = {
   entry: "./src/main.tsx",
   output: {
     publicPath: modulePath,
-    // publicPath: "auto",
   },
   devServer: {
     static: {
@@ -59,7 +58,6 @@ const config = {
           },
         },
       },
-
       getPublicPath: `function() {return "${modulePath}"}`,
     }),
   ],
