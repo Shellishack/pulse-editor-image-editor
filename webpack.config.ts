@@ -3,14 +3,15 @@ import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { fileURLToPath } from "url";
 import pulseConfig from "./pulse.config";
-import { Configuration } from "webpack";
+import { Configuration as WebpackConfig } from "webpack";
+import { Configuration as DevServerConfig } from "webpack-dev-server";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const modulePath = `http://localhost:3001/${pulseConfig.id}/${pulseConfig.version}/`;
 
-const config: Configuration = {
+const config: WebpackConfig & DevServerConfig = {
   entry: "./src/main.tsx",
   output: {
     publicPath: modulePath,
