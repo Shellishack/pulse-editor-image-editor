@@ -10,6 +10,7 @@
     },
     "include": [
         "src/**/*",
+        "pulse.config.ts",
     ],
     "exclude": [
         "node_modules",

@@ -1,13 +1,16 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
+import { join, dirname } from "path";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { fileURLToPath } from "url";
+import pulseConfig from "./pulse.config";
+import { Configuration } from "webpack";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const modulePath = "http://localhost:3001/pulse_extension_template/v0.0.1/";
+const modulePath = `http://localhost:3001/${pulseConfig.id}/${pulseConfig.version}/`;
 
-const config = {
+const config: Configuration = {
   entry: "./src/main.tsx",
   output: {
     publicPath: modulePath,
@@ -33,7 +36,7 @@ const config = {
     }),
     new ModuleFederationPlugin({
       // Do not use hyphen character '-' in the name
-      name: "pulse_extension_template",
+      name: pulseConfig.id,
       filename: "remoteEntry.js",
       exposes: {
         "./main": "./src/main",
@@ -52,10 +55,8 @@ const config = {
         },
         // Share Workbox configuration as a module
         "workbox-webpack-plugin": {
-          shareConfig: {
-            singleton: true,
-            requiredVersion: "^7.3.0",
-          },
+          singleton: true,
+          requiredVersion: "^7.3.0",
         },
       },
       getPublicPath: `function() {return "${modulePath}"}`,

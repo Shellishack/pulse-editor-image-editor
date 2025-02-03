@@ -1,20 +1,8 @@
 import React, { useState } from "react";
 import "./tailwind.css";
-import { ExtensionConfig, ExtensionTypeEnum } from "@pulse-editor/types";
+import config from "../pulse.config";
 
-/**
- * Pulse Editor Extension Config
- *
- */
-export const Config: ExtensionConfig = {
-  // Do not use hyphen character '-' in the name
-  id: "pulse_extension_template",
-  displayName: "Pulse Extension Template",
-  description: "Pulse extension template",
-  version: "v0.0.1",
-  extensionType: ExtensionTypeEnum.FileView,
-  fileTypes: ["txt", "json", "py", "cpp", "c", "tsx", "ts", "js", "jsx"],
-};
+export const Config = config;
 
 export default function Main() {
   const [count, setCount] = useState<number>(0);
