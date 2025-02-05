@@ -6,7 +6,7 @@ import packageJson from "./package.json" with { type: "json" };
  *
  */
 const config: ExtensionConfig = {
-  // Do not use hyphen character '-' in the name. 
+  // Do not use hyphen character '-' in the id. 
   // The id should be the same as the package name in package.json.
   id: packageJson.name,
   displayName: "Pulse Extension Template",
