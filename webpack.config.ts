@@ -1,14 +1,9 @@
-import { join, dirname } from "path";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { fileURLToPath } from "url";
 import pulseConfig from "./pulse.config";
 import { Configuration as WebpackConfig } from "webpack";
 import { Configuration as DevServerConfig } from "webpack-dev-server";
 import { networkInterfaces } from "os";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 function getLocalNetworkIP() {
   const interfaces = networkInterfaces();
@@ -30,19 +25,7 @@ const modulePath = `http://${origin}:3001/${pulseConfig.id}/${pulseConfig.versio
 const config: WebpackConfig & DevServerConfig = {
   entry: "./src/main.tsx",
   output: {
-    publicPath: modulePath,
-  },
-  devServer: {
-    static: {
-      directory: join(__dirname, "dist"),
-    },
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers":
-        "X-Requested-With, content-type, Authorization",
-    },
-    port: 3001,
+    publicPath: "auto",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],

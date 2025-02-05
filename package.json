@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "dev": "cross-env NODE_OPTIONS='--import=tsx' webpack-cli serve --mode development",
+    "dev": "cross-env NODE_OPTIONS='--import=tsx' webpack --mode development && tsx express.ts",
     "build": "cross-env NODE_OPTIONS='--import=tsx' webpack --mode production"
   },
   "dependencies": {
     "@module-federation/enhanced": "^0.8.9",
     "@pulse-editor/react-api": "file:../pulse-editor/npm-packages/react-api",
     "@pulse-editor/types": "file:../pulse-editor/npm-packages/types",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
