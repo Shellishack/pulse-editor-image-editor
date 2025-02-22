@@ -12,6 +12,7 @@ You can use hooks provided by `@pulse-editor/react-api` to interact with Pulse E
 - Use agentic tools installed in Pulse Editor.
 
 ### Start development
+#### Method 1: Install your extension in Pulse Editor as a dev extension
 Run the following to start a dev server locally.
 ```
 npm run dev
@@ -20,3 +21,10 @@ This will host your extension at http://localhost:3001 (or you can customize the
 - dev server: e.g. http://localhost:3001
 - extension id: your extension's ID specified in `pulse.config.ts` 
 - version: your extension's version specified in `pulse.config.ts`
+
+#### Method 2: Preview your extension in browser
+If you'd like to quickly get started on developing your extension without installing it inside Pulse Editor. You can run a preview dev server that runs in your browser (just like developing React application).
+```
+npm run preview
+```
+> Please note that your extension won't be able to use IMC (Inter-Module-Communication) to communicate with Pulse Editor during preview development mode.

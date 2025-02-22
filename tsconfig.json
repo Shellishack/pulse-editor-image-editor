@@ -10,7 +10,7 @@
     },
     "include": [
         "src/**/*",
-        "pulse.config.ts",
+        "pulse.config.ts", "preview/index.tsx",
     ],
     "exclude": [
         "node_modules",
