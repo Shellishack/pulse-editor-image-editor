@@ -9,9 +9,9 @@ const config: ExtensionConfig = {
   // Do not use hyphen character '-' in the id. 
   // The id should be the same as the package name in package.json.
   id: packageJson.name,
-  displayName: "Pulse Extension Template",
-  description: "Pulse extension template",
-  version: "v0.0.1",
+  displayName: packageJson.displayName,
+  description: packageJson.description,
+  version: packageJson.version,
   extensionType: ExtensionTypeEnum.FileView,
   fileTypes: ["txt", "json", "py", "cpp", "c", "tsx", "ts", "js", "jsx"],
 };

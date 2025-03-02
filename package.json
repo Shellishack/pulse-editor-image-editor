@@ -1,5 +1,7 @@
 {
   "name": "pulse_extension_template",
+  "displayName": "Pulse Extension Template",
+  "description": "A template for creating Pulse extensions",
   "version": "0.0.1",
   "private": true,
   "type": "module",
