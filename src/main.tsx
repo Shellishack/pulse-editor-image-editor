@@ -8,9 +8,9 @@ export default function Main() {
   const [count, setCount] = useState<number>(0);
 
   return (
-    <div>
+    <div className="p-2">
       <button
-        className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-sm"
         onClick={() => setCount(count + 1)}
       >
         Click me

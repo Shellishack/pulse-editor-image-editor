@@ -66,7 +66,7 @@ const previewConfig: WebpackConfig & DevServerConfig = {
     ],
   },
   devServer: {
-    port: 3000,
+    port: 3030,
     hot: true, // Enable Hot Module Replacement
   },
   mode: "development",
@@ -93,14 +93,14 @@ const mfConfig: WebpackConfig & DevServerConfig = {
       },
       shared: {
         react: {
-          requiredVersion: "19.0.0-rc-65e06cb7-20241218",
+          requiredVersion: "19.1.0",
           import: "react", // the "react" package will be used a provided and fallback module
           shareKey: "react", // under this name the shared module will be placed in the share scope
           shareScope: "default", // share scope with this name will be used
           singleton: true, // only a single version of the shared module is allowed
         },
         "react-dom": {
-          requiredVersion: "19.0.0-rc-65e06cb7-20241218",
+          requiredVersion: "19.1.0",
           singleton: true, // only a single version of the shared module is allowed
         },
         // Share Workbox configuration as a module
