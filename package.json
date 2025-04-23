@@ -7,9 +7,10 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "dev": "cross-env NODE_OPTIONS='--import=tsx' webpack --mode development && tsx express.ts",
-    "build": "cross-env NODE_OPTIONS='--import=tsx' webpack --mode production",
-    "preview": "cross-env NODE_OPTIONS='--import=tsx' PREVIEW=true webpack serve --mode development"
+    "dev": "npm run clean && cross-env NODE_OPTIONS='--import=tsx' webpack --mode development && tsx express.ts",
+    "build": "npm run clean && cross-env NODE_OPTIONS='--import=tsx' webpack --mode production",
+    "preview": "cross-env NODE_OPTIONS='--import=tsx' PREVIEW=true webpack serve --mode development",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@module-federation/enhanced": "^0.13.0",
@@ -33,6 +34,7 @@
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "postcss-preset-env": "^10.1.6",
+    "rimraf": "^6.0.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.4",
     "ts-loader": "^9.5.2",
