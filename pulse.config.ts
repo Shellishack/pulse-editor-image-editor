@@ -1,4 +1,4 @@
-import { ExtensionConfig, ExtensionTypeEnum } from "@pulse-editor/types";
+import { ExtensionConfig, ExtensionTypeEnum } from "@pulse-editor/shared-utils";
 import packageJson from "./package.json" with { type: "json" };
 
 /**
