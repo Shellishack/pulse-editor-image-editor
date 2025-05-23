@@ -30,18 +30,6 @@ const previewConfig: WebpackConfig & DevServerConfig = {
           "css-loader",
           {
             loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
-              },
-            },
           },
         ],
       },
@@ -103,18 +91,6 @@ const mfConfig: WebpackConfig & DevServerConfig = {
           "css-loader",
           {
             loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
-              },
-            },
           },
         ],
       },

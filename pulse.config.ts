@@ -13,7 +13,7 @@ const config: ExtensionConfig = {
   description: packageJson.description,
   version: packageJson.version,
   extensionType: ExtensionTypeEnum.FileView,
-  fileTypes: ["txt", "json", "py", "cpp", "c", "tsx", "ts", "js", "jsx"],
+  fileTypes: ["peie.image"],
 };
 
 export default config;

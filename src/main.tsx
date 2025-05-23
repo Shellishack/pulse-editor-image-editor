@@ -1,21 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./tailwind.css";
 import config from "../pulse.config";
+import { WrappedHeroUIProvider } from "./components/providers/wrapped-hero-ui-provider";
+import EditorPanel from "./components/editor-panel";
+import "material-icons/iconfont/material-icons.css";
+import { useLoading } from "@pulse-editor/react-api";
 
 export const Config = config;
 
 export default function Main() {
-  const [count, setCount] = useState<number>(0);
+  const { toggleLoading, isReady } = useLoading();
+
+  useEffect(() => {
+    if (isReady) {
+      toggleLoading(false);
+    }
+  }, [isReady]);
 
   return (
-    <div className="p-2">
-      <button
-        className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-sm"
-        onClick={() => setCount(count + 1)}
-      >
-        Click me
-      </button>
-      <p className="text-blue-400">{count}</p>
-    </div>
+    <WrappedHeroUIProvider>
+      <EditorPanel />
+    </WrappedHeroUIProvider>
   );
 }

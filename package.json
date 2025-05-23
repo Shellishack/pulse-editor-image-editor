@@ -1,5 +1,5 @@
 {
-  "name": "pulse_editor_extension_template",
+  "name": "pulse_editor_image_editor",
   "displayName": "Pulse Extension Template",
   "description": "A template for creating Pulse extensions",
   "version": "0.0.1",
@@ -13,12 +13,16 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@heroui/react": "^2.8.0-beta.5",
+    "@heroui/theme": "^2.4.16-beta.2",
     "@module-federation/enhanced": "^0.13.0",
-    "@pulse-editor/react-api": "^0.1.1-alpha.7",
-    "@pulse-editor/shared-utils": "^0.1.1-alpha.7",
+    "@pulse-editor/react-api": "file:../pulse-editor/npm-packages/react-api",
+    "@pulse-editor/shared-utils": "file:../pulse-editor/npm-packages/shared-utils",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
+    "material-icons": "^1.13.14",
+    "next-themes": "^0.4.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -33,7 +37,6 @@
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
-    "postcss-preset-env": "^10.1.6",
     "rimraf": "^6.0.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.4",
