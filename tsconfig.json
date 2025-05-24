@@ -10,7 +10,7 @@
     },
     "include": [
         "src/**/*",
-        "pulse.config.ts", "preview/index.tsx",
+        "pulse.config.ts", "preview/index.tsx", "tailwind.config.mjs",
     ],
     "exclude": [
         "node_modules",
